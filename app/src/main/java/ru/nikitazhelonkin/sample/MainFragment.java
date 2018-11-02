@@ -11,7 +11,7 @@ import android.widget.TextView;
 
 import ru.nikitazhelonkin.mvp.android.MvpFragment;
 
-public class MainFragment extends MvpFragment<MainPresenter, MainView> implements MainView {
+public class MainFragment extends MvpFragment<MainPresenter> implements MainView  {
 
     private TextView mCounter;
 

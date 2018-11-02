@@ -7,7 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import ru.nikitazhelonkin.mvp.MvpPresenter;
 import ru.nikitazhelonkin.mvp.MvpView;
 
-public abstract class MvpActivity<P extends MvpPresenter<V>, V extends MvpView> extends AppCompatActivity {
+public abstract class MvpActivity<P extends MvpPresenter> extends AppCompatActivity {
 
     private P mPresenter;
 
@@ -16,7 +16,7 @@ public abstract class MvpActivity<P extends MvpPresenter<V>, V extends MvpView> 
     protected void onPostCreate(@Nullable Bundle savedInstanceState) {
         super.onPostCreate(savedInstanceState);
         mPresenter = PresenterProvider.of(this).get(this::onCreatePresenter);
-        mPresenter.attachView((V) this, savedInstanceState == null);
+        mPresenter.attachView((MvpView) this, savedInstanceState == null);
     }
 
     @Override

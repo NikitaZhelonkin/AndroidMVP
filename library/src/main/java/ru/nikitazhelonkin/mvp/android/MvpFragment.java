@@ -7,7 +7,7 @@ import android.support.v4.app.Fragment;
 import ru.nikitazhelonkin.mvp.MvpPresenter;
 import ru.nikitazhelonkin.mvp.MvpView;
 
-public abstract class MvpFragment<P extends MvpPresenter<V>, V extends MvpView> extends Fragment {
+public abstract class MvpFragment<P extends MvpPresenter> extends Fragment {
 
     private P mPresenter;
 
@@ -28,7 +28,7 @@ public abstract class MvpFragment<P extends MvpPresenter<V>, V extends MvpView> 
             mOnCreate = false;
         }
         if (mPresenter != null)
-            mPresenter.attachView((V) this, savedInstanceState == null);
+            mPresenter.attachView( (MvpView) this, savedInstanceState == null);
     }
 
     @Override

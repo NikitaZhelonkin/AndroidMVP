@@ -7,7 +7,7 @@ import android.support.v7.app.AppCompatDialogFragment;
 import ru.nikitazhelonkin.mvp.MvpPresenter;
 import ru.nikitazhelonkin.mvp.MvpView;
 
-public abstract class MvpDialogFragment<P extends MvpPresenter<V>, V extends MvpView> extends AppCompatDialogFragment {
+public abstract class MvpDialogFragment<P extends MvpPresenter> extends AppCompatDialogFragment {
 
     private P mPresenter;
 
@@ -28,7 +28,7 @@ public abstract class MvpDialogFragment<P extends MvpPresenter<V>, V extends Mvp
             mOnCreate = false;
         }
         if (mPresenter != null)
-            mPresenter.attachView((V) this, savedInstanceState == null);
+            mPresenter.attachView((MvpView) this, savedInstanceState == null);
     }
 
     @Override
