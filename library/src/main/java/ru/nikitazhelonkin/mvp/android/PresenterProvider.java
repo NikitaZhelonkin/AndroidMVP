@@ -7,7 +7,7 @@ import android.support.v4.app.FragmentActivity;
 
 import ru.nikitazhelonkin.mvp.MvpPresenter;
 
-class PresenterProvider {
+public class PresenterProvider {
 
     public interface Factory<T extends MvpPresenter> {
         T create();
