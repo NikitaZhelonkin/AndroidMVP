@@ -3,8 +3,6 @@ package ru.nikitazhelonkin.sample;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
-import ru.nikitazhelonkin.mvp.android.HolderFragment;
-
 public class MainActivity extends AppCompatActivity {
 
     @Override
